@@ -1,0 +1,28 @@
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  accessibilityMode: { type: String, enum: ['visual', 'mobility', 'hearing', 'cognitive'], default: 'visual' },
+  obstaclesReported: { type: Number, default: 0 },
+  checkpointsDiscovered: { type: Number, default: 0 },
+  treesPlanted: { type: Number, default: 0 },
+  forestsCompleted: { type: Number, default: 0 },
+  points: { type: Number, default: 0 },
+  level: { type: Number, default: 1 },
+}, { timestamps: true });
+
+userSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) return next();
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
+});
+
+userSchema.methods.matchPassword = async function(enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
+module.exports = mongoose.model('User', userSchema);

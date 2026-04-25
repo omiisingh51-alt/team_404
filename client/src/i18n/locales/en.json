@@ -1,0 +1,53 @@
+{
+  "app_name": "SafeStep",
+  "nav": {
+    "home": "Home",
+    "map": "Map",
+    "detection": "Detection",
+    "forest": "My Forest",
+    "leaderboard": "Leaderboard",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "no_account": "Don't have an account? Sign up",
+    "have_account": "Already have an account? Login"
+  },
+  "home": {
+    "welcome": "Welcome back",
+    "obstacles_reported": "Obstacles Reported",
+    "trees_planted": "Trees Planted",
+    "forests_completed": "Forests Completed",
+    "quick_actions": "Quick Actions",
+    "nearby_alerts": "Nearby Alerts",
+    "accessibility_mode": "Accessibility Mode"
+  },
+  "map": {
+    "title": "Navigation Map",
+    "report_obstacle": "Report Obstacle",
+    "wheelchair_mode": "Wheelchair Routing"
+  },
+  "detection": {
+    "title": "Obstacle Detection",
+    "scanning": "Scanning..."
+  },
+  "forest": {
+    "title": "My Forest",
+    "trees": "Trees",
+    "points": "Points",
+    "next_tree": "Next Tree",
+    "how_it_works": "How It Works"
+  },
+  "leaderboard": {
+    "title": "Leaderboard",
+    "rank": "Rank",
+    "name": "Name",
+    "trees": "Trees",
+    "forests": "Forests",
+    "reports": "Reports"
+  }
+}
